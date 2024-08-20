@@ -1,0 +1,4 @@
+<p>Here we will display the user's listings.</p>
+<% current_user.offers.each do |offer| %>
+  <%= offer.plant_name %>
+<% end %>

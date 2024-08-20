@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "offers#index"
-  get "/new", to: "offers#new", as: "new_offer"
   resources :offers
+  get "/listings", to: "listings#list", as: "listings"
 end
