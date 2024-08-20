@@ -14,6 +14,11 @@ class OffersController < ApplicationController
     redirect_to offer_path(@offer)
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
+
   private
 
   def offer_params
