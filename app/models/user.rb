@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :addresses
   has_many :offers
   has_many :bookings
 
   validates :username, presence: true, uniqueness: true
+  validates :street, :city, :state, :country, :zip, presence: true
 end
