@@ -7,22 +7,57 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
 
 Offer.destroy_all
 User.destroy_all
 
-puts "creating 5 users"
-user1 = User.create!(username: "Carlos Yuggernaut", email: "a@a.com", password: "2309hyr")
-user2 = User.create!(username: "Boluos Yuggernaut", email: "b@b.com", password: "a23yar")
-user3 = User.create!(username: "Gurt Yuggernaut", email: "c@c.com", password: "209hyr")
-user4 = User.create!(username: "brilliant Yuggernaut", email: "d@d.com", password: "209hyasdadsr")
-user5 = User.create!(username: "lwui Yuggernaut", email: "e@e.com", password: "20af9hyr")
+puts "creating 20 unique users!"
 
-puts "finished creating 5 users"
+User.create!(username: "Carlos Yuggernaut", email: "a@a.com", password: "2309hyr", street: "Rudi Dutschke Straße 33", city: "Berlin", state: "Berlin", country: "Germany", zip: 10969)
+User.create!(username: "Emily Waters", email: "emily.waters@example.com", password: "p4ssw0rd!", street: "221B Baker Street", city: "London", state: "London", country: "UK", zip: 434342)
+User.create!(username: "Kenji Sato", email: "kenji.sato@example.jp", password: "sato1234", street: "1 Chome-1-2 Oshiage", city: "Sumida", state: "Tokyo", country: "Japan", zip: 1310045)
+User.create!(username: "Maria Sanchez", email: "maria.s@example.es", password: "123456", street: "Calle de Alcalá 45", city: "Madrid", state: "Madrid", country: "Spain", zip: 28014)
+User.create!(username: "John Doe", email: "jdoe@example.com", password: "doe98765", street: "1600 Pennsylvania Avenue NW", city: "Washington", state: "DC", country: "USA", zip: 20500)
+User.create!(username: "Isabella Rossi", email: "isabella.rossi@example.it", password: "rossi890", street: "Via del Corso 501", city: "Rome", state: "Lazio", country: "Italy", zip: 033201)
+User.create!(username: "Pierre Dubois", email: "pierre.dubois@example.fr", password: "bonjour123", street: "10 Avenue des Champs-Élysées", city: "Paris", state: "Île-de-France", country: "France", zip: 75008)
+User.create!(username: "Lara Croft", email: "lcroft@example.com", password: "t0mbRaider", street: "123 Raider Street", city: "London", state: "Greater London", country: "UK", zip: 53344)
+User.create!(username: "Ankit Patel", email: "ankit.patel@example.in", password: "ankitP@tel2021", street: "MG Road", city: "Mumbai", state: "Maharashtra", country: "India", zip: 400001)
+User.create!(username: "Olga Ivanova", email: "olga.ivanova@example.ru", password: "rus0lga", street: "Tverskaya Street 10", city: "Moscow", state: "Moscow", country: "Russia", zip: 125009)
+User.create!(username: "Li Wei", email: "li.wei@example.cn", password: "l1we1ch1na", street: "1 Tiananmen East Road", city: "Beijing", state: "Beijing", country: "China", zip: 100000)
+User.create!(username: "Sophia Smith", email: "sophia.smith@example.ca", password: "sm1thS0phia", street: "100 Queen Street", city: "Toronto", state: "Ontario", country: "Canada", zip: 3423)
+User.create!(username: "Ahmed Al-Farsi", email: "ahmed.farsi@example.ae", password: "ahmed@2021", street: "Sheikh Zayed Road", city: "Dubai", state: "Dubai", country: "UAE", zip: 00000)
+User.create!(username: "Marta Nowak", email: "marta.nowak@example.pl", password: "poland2022", street: "Nowy Świat 15", city: "Warsaw", state: "Mazowieckie", country: "Poland", zip: 00372)
+User.create!(username: "Hassan Ali", email: "hassan.ali@example.pk", password: "aliHassan", street: "Mall Road", city: "Lahore", state: "Punjab", country: "Pakistan", zip: 54000)
+User.create!(username: "Anna Müller", email: "anna.mueller@example.de", password: "g3rmany123", street: "Marienplatz 1", city: "Munich", state: "Bavaria", country: "Germany", zip: 80331)
+User.create!(username: "Carlos Diaz", email: "carlos.diaz@example.mx", password: "diazC2023", street: "Paseo de la Reforma 100", city: "Mexico City", state: "CDMX", country: "Mexico", zip: 06600)
+User.create!(username: "Yasmine El-Sayed", email: "yasmine.sayed@example.eg", password: "y@smin3l", street: "Al Tahrir Square", city: "Cairo", state: "Cairo", country: "Egypt", zip: 11511)
+User.create!(username: "Lucas Silva", email: "lucas.silva@example.br", password: "lucasS!lva", street: "Avenida Paulista 900", city: "São Paulo", state: "São Paulo", country: "Brazil", zip: 01310100)
+User.create!(username: "Emily Wilson", email: "emily.wilson@example.au", password: "wilsonEmi@", street: "1 Macquarie Street", city: "Sydney", state: "NSW", country: "Australia", zip: 2000)
 
-puts "creating 5 plants"
-Offer.create!(plant_name: "Blue cactus", status: true, price: 50.00, plant_description: "blue", user: user1)
-Offer.create!(plant_name: "red cactus", status: true, price: 50.50, plant_description: "red", user: user2)
-Offer.create!(plant_name: "yellow cactus", status: true, price: 50.30, plant_description: "yellow", user: user3)
-Offer.create!(plant_name: "black cactus", status: true, price: 50.20, plant_description: "black", user: user4)
-Offer.create!(plant_name: "orange cactus", status: true, price: 50.10, plant_description: "orange", user: user5)
+puts "Finished creating #{User.count} users!"
+
+puts "Creating 20 very unique Offers!"
+
+Offer.create!(plant_name: "Monstera", status: true, price: 7.89, plant_description: "Large, heart-shaped leaves with natural holes. Thrives in bright, indirect light.", user: User.all.sample)
+Offer.create!(plant_name: "Aloe Vera", status: true, price: 4.50, plant_description: "Succulent plant known for its medicinal properties. Prefers dry, sandy soil.", user: User.all.sample)
+Offer.create!(plant_name: "Fiddle Leaf Fig", status: true, price: 8.75, plant_description: "Tall plant with large, glossy leaves. Perfect for bright, airy spaces.", user: User.all.sample)
+Offer.create!(plant_name: "Snake Plant", status: true, price: 5.99, plant_description: "Hardy, low-maintenance plant with tall, sword-like leaves. Ideal for beginners.", user: User.all.sample)
+Offer.create!(plant_name: "Peace Lily", status: true, price: 6.45, plant_description: "Elegant plant with dark green leaves and white blooms. Loves shade and moisture.", user: User.all.sample)
+Offer.create!(plant_name: "Spider Plant", status: true, price: 3.80, plant_description: "Fast-growing with arching green and white striped leaves. Easy to propagate.", user: User.all.sample)
+Offer.create!(plant_name: "Boston Fern", status: true, price: 4.25, plant_description: "Lush, feathery fronds that thrive in humid, shaded environments.", user: User.all.sample)
+Offer.create!(plant_name: "Pothos", status: true, price: 3.99, plant_description: "Trailing plant with heart-shaped leaves. Great for hanging baskets.", user: User.all.sample)
+Offer.create!(plant_name: "Rubber Plant", status: true, price: 7.20, plant_description: "Thick, glossy leaves with a deep green hue. Prefers bright, indirect light.", user: User.all.sample)
+Offer.create!(plant_name: "Jade Plant", status: true, price: 6.35, plant_description: "Succulent with thick, round leaves. Symbolizes prosperity and luck.", user: User.all.sample)
+Offer.create!(plant_name: "Calathea", status: true, price: 5.50, plant_description: "Known for its striking leaf patterns and vibrant colors. Loves humidity.", user: User.all.sample)
+Offer.create!(plant_name: "ZZ Plant", status: true, price: 7.10, plant_description: "Tough, drought-resistant plant with shiny, deep green leaves. Perfect for low light.", user: User.all.sample)
+Offer.create!(plant_name: "English Ivy", status: true, price: 2.75, plant_description: "Climbing vine with small, lobed leaves. Ideal for creating green walls.", user: User.all.sample)
+Offer.create!(plant_name: "Bird of Paradise", status: true, price: 9.99, plant_description: "Tropical plant with large, banana-like leaves. Produces striking orange flowers.", user: User.all.sample)
+Offer.create!(plant_name: "Chinese Money Plant", status: true, price: 6.89, plant_description: "Compact plant with round, coin-shaped leaves. Easy to care for.", user: User.all.sample)
+Offer.create!(plant_name: "Dracaena", status: true, price: 5.40, plant_description: "Tall, spiky leaves. Thrives in low light and needs minimal water.", user: User.all.sample)
+Offer.create!(plant_name: "Bonsai Tree", status: true, price: 9.50, plant_description: "Miniature tree cultivated for its aesthetic appeal. Requires careful pruning.", user: User.all.sample)
+Offer.create!(plant_name: "Philodendron", status: true, price: 3.60, plant_description: "Trailing plant with heart-shaped leaves. Adapts well to low light.", user: User.all.sample)
+Offer.create!(plant_name: "Lavender", status: true, price: 4.99, plant_description: "Fragrant herb with purple flowers. Known for its calming scent.", user: User.all.sample)
+Offer.create!(plant_name: "Orchid", status: true, price: 8.25, plant_description: "Exotic plant with delicate, long-lasting flowers. Requires specific care.", user: User.all.sample)
+
+puts "Finished creating #{Offer.count} very, very unique offers!"
