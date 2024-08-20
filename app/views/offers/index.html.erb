@@ -1,1 +1,6 @@
 <h1>Plant offers</h1>
+<ul>
+  <% @offers.each do |offer| %>
+    <li><%= link_to offer.plant_name, offer_path(offer) , class: "btn btn-magic" %></li>
+  <% end %>
+</ul>
