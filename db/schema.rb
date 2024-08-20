@@ -10,21 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_19_142942) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_20_093141) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.integer "zip"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
@@ -39,12 +27,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_142942) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.string "plant"
+    t.string "plant_name"
     t.boolean "status"
     t.float "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plant_description"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
@@ -57,11 +46,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_142942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.integer "zip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "offers", "users"
