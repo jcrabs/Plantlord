@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Creating a monstera!"
+Offer.create(plant: "Monstera", price: 3.99)
+puts "Finished creating a monstera!"
