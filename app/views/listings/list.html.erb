@@ -10,14 +10,30 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active mt-3" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
     <p>Active listings</p>
-    <% current_user.offers.each do |offer| %>
-      <%= offer.plant_name %>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <% @active_offers.each do |offer| %>
+          <div class="col-md-3 mb-4">
+            <%= link_to offer_path(offer) do %>
+              <%= render "shared/plant_card", offer: offer %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <hr>
     <p>Past listings</p>
-    <% current_user.offers.each do |offer| %>
-      <%= offer.plant_name %>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <% @past_offers.each do |offer| %>
+          <div class="col-md-3 mb-4">
+            <%= link_to offer_path(offer) do %>
+              <%= render "shared/plant_card", offer: offer %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="tab-pane fade  mt-3" id="user-requests-tab-pane" role="tabpanel" aria-labelledby="user-requests-tab" tabindex="0">
     <p>Pending user requests</p>

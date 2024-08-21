@@ -7,17 +7,7 @@
     <% @offers.each do |offer| %>
       <div class="col-md-3 mb-4">
         <%= link_to offer_path(offer) do %>
-        <div class="card">
-          <img src="https://m.media-amazon.com/images/I/71zmlJtzOCL.jpg" class="card-img-top" alt="Plant image" />
-          <div class="card-body">
-            <h5 class="card-title"><strong><%= offer.plant_name %></strong></h5>
-            <p class="card-text"><%= offer.plant_description %></p>
-            <h6 class="card-price">€<%= offer.price %></h6>
-          </div>
-          <div class="card-footer">
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/common-area-icons/default-avatar-1.png" class="avatar img-fluid" alt="User avatar" />
-          </div>
-        </div>
+          <%= render "shared/plant_card", offer: offer %>
         <% end %>
       </div>
     <% end %>

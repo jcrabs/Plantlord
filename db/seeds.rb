@@ -10,10 +10,13 @@
 require 'faker'
 require "open-uri"
 
+booking_status = %w[Pending Active Rejected]
 img_height = 320
 img_width = 320
 url = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/")
 
+puts "Destroying all Bookings!"
+Booking.destroy_all
 puts "Destroying all Offers!"
 Offer.destroy_all
 puts "Destroying all Users!"
@@ -68,6 +71,12 @@ Offer.create!(plant_name: "Lavender", status: true, price: 4.99, plant_descripti
 Offer.create!(plant_name: "Orchid", status: true, price: 8.25, plant_description: "Exotic plant with delicate, long-lasting flowers. Requires specific care.", user: User.all.sample)
 
 puts "Finished creating #{Offer.count} very, very unique offers!"
+
+puts "Creating 20 bookings!"
+20.times do
+  Booking.create!(user: User.all.sample, offer: Offer.all.sample, status: booking_status.sample, comment:"This is a comment.", duration:"#{rand(60)} days.")
+end
+puts "Finished creating #{Booking.count} bookings!"
 
 resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
 
