@@ -1,8 +1,13 @@
-<div class="container">
-  <h1><%= @offer.plant_name %><h1>
-  <p><%= @offer.price %> €</p>
-  <p>this is the price breakdown</p>
-  <p><%= @offer.plant_description %></p>
-  <%= @offer.user_id %>
-  <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
+
+
+<div class="card-product">
+  <img src="https://m.media-amazon.com/images/I/71zmlJtzOCL.jpg" alt="Plant image" />
+  <div class="card-product-infos">
+    <h2><%= @offer.plant_name %></h2>
+    <p><%= @offer.plant_description %></p>
+    <p><%= @offer.price %> €</p>
+
+  </div>
+
+
 </div>
