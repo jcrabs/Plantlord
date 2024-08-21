@@ -1,0 +1,17 @@
+.card {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(5, 91, 38, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 0 30px 10px rgba(5, 91, 38, 0.5);
+  background-color: #70ab6d;
+  transform: translateY(-5px);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

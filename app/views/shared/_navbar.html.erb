@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <%# <a class="navbar-brand" href="#"><strong>🌱 Plant</strong>lord</a> %>
     <%= link_to root_path, class: "navbar-brand" do %>
       🌱 <strong>Plant</strong>lord
     <% end %>
@@ -29,6 +28,7 @@
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.svgrepo.com/show/452030/avatar-default.svg" />
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+
               </div>
             </li>
             <% else %>
