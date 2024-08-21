@@ -4,6 +4,7 @@
     <% @offers.each do |offer| %>
       <div class="col-md-3 mb-4">
         <%= link_to offer_path(offer) do %>
+
         <div class="card">
           <div><%= cl_image_tag offer.photo.key, height: 300, width: 300 %></div>
           <div class="card-body">
@@ -18,6 +19,9 @@
             </div>
           </div>
         </div>
+
+          <%= render "shared/plant_card", offer: offer %>
+
         <% end %>
       </div>
     <% end %>
