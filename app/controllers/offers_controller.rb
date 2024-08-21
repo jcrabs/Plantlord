@@ -9,6 +9,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.user = current_user
     @offer.save
     # No need for app/views/offers/create.html.erb
     redirect_to offer_path(@offer)
@@ -22,6 +23,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:plant, :price, :photo)
+    params.require(:offer).permit(:plant_name, :plant_description, :price, :photo)
   end
 end
