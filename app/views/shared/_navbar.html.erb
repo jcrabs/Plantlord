@@ -30,8 +30,7 @@
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.svgrepo.com/show/452030/avatar-default.svg" />
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
             </li>
             <% else %>
