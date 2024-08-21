@@ -1,14 +1,21 @@
 .btn-plant {
   color: white;
   background: #31df06;
+  box-shadow: 10px 5px 5px rgba(3, 3, 3, 0.274);;
+  border: 8px white;
   transition: background 0.3s ease;
   position: fixed;
-  bottom: 20px;  /* Adjust the value to set the distance from the bottom */
-  right: 20px;   /* Adjust the value to set the distance from the right */
-  padding: 8;
+  bottom: 40px;  /* Adjust the value to set the distance from the bottom */
+  right: 80px;   /* Adjust the value to set the distance from the right */
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  justify-content: center;
+  align-content: center;
 }
 
 .btn-plant:hover {
-  background: #c5ffb3;
+  background: #2c8f0d;
   color: white;
 }
