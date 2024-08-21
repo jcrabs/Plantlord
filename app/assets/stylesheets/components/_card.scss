@@ -4,12 +4,13 @@
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+  height: 100%;
 }
 
 .card:hover {
   box-shadow: 0 0 30px 10px rgba(5, 91, 38, 0.5);
   background-color: #70ab6d;
-  transform: translateY(-5px);
+  transform: translateY(-9px);
 }
 a {
   color: inherit;
