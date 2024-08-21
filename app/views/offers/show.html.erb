@@ -1,11 +1,12 @@
 
 
 <div class="card-product">
-  <img src="https://m.media-amazon.com/images/I/71zmlJtzOCL.jpg" alt="Plant image" />
+  <%= cl_image_tag @offer.photo.key, height: 300, width: 300 %>
   <div class="card-product-infos">
     <h2><%= @offer.plant_name %></h2>
     <p><%= @offer.plant_description %></p>
     <p><%= @offer.price %> €</p>
+
     <%= link_to "Rent", "#", class: "btn btn-flat" %>
 
   </div>
