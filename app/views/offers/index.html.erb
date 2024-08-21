@@ -8,20 +8,7 @@
       <div class="col-md-3 mb-4">
         <%= link_to offer_path(offer) do %>
 
-        <div class="card">
-          <div><%= cl_image_tag offer.photo.key, height: 300, width: 300 %></div>
-          <div class="card-body">
-            <h5 class="card-title"><strong><%= offer.plant_name %></strong></h5>
-            <p class="card-text"><%= offer.plant_description %></p>
-            <h6 class="card-price">€<strong><%= offer.price %></strong></h6>
-          </div>
-          <div class="card-footer">
-            <div class="d-flex justify-content-between">
-              <img src="https://icons.veryicon.com/png/o/miscellaneous/common-area-icons/default-avatar-1.png" class="avatar img-fluid" alt="User avatar" />
-              <h6><%= offer.user.username %></h6>
-            </div>
-          </div>
-        </div>
+        
 
           <%= render "shared/plant_card", offer: offer %>
 
