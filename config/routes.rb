@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   root to: "offers#index"
   resources :offers
   get "/listings", to: "listings#list", as: "listings"
+  get "/subscriptions", to: "subscriptions#list", as: "subscriptions"
 end
