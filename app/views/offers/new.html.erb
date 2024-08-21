@@ -1,1 +1,8 @@
 <p>Add a new offer</p>
+<%= simple_form_for(@offer) do |f| %>
+  <%= f.input :plant_name %>
+  <%= f.input :plant_description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
