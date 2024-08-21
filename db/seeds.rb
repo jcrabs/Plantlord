@@ -72,8 +72,8 @@ Offer.create!(plant_name: "Orchid", status: true, price: 8.25, plant_description
 
 puts "Finished creating #{Offer.count} very, very unique offers!"
 
-puts "Creating 20 bookings!"
-20.times do
+puts "Creating 100 bookings!"
+100.times do
   Booking.create!(user: User.all.sample, offer: Offer.all.sample, status: booking_status.sample, comment:"This is a comment.", duration:"#{rand(60)} days.")
 end
 puts "Finished creating #{Booking.count} bookings!"
