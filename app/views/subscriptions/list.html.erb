@@ -9,9 +9,31 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active mt-3" id="subscriptions-tab-pane" role="tabpanel" aria-labelledby="subscriptions-tab" tabindex="0">
-    <p>Active subscriptios</p>
+    <p>Active subscriptions</p>
+    <div class="container">
+      <div class="row">
+        <% @active_subscriptions.each do |subscription| %>
+          <div class="col-md-3 mb-4">
+            <%= link_to offer_path(subscription.offer_id) do %>
+              <%= render "shared/plant_card", offer: Offer.where(id: subscription.offer_id)[0] %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <hr>
-    <p>Past subscriptios</p>
+    <p>Past subscriptions</p>
+    <div class="container">
+      <div class="row">
+        <% @past_subscriptions.each do |subscription| %>
+          <div class="col-md-3 mb-4">
+            <%= link_to offer_path(subscription.offer_id) do %>
+              <%= render "shared/plant_card", offer: Offer.where(id: subscription.offer_id)[0] %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="tab-pane fade  mt-3" id="my-requests-tab-pane" role="tabpanel" aria-labelledby="my-requests-tab" tabindex="0">
     <p>Pending requests</p>
