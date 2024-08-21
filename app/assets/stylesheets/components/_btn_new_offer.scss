@@ -1,0 +1,14 @@
+.btn-plant {
+  color: white;
+  background: #31df06;
+  transition: background 0.3s ease;
+  position: fixed;
+  bottom: 20px;  /* Adjust the value to set the distance from the bottom */
+  right: 20px;   /* Adjust the value to set the distance from the right */
+  padding: 8;
+}
+
+.btn-plant:hover {
+  background: #c5ffb3;
+  color: white;
+}
