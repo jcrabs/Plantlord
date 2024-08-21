@@ -8,11 +8,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'faker'
+require "open-uri"
 
+img_height = 320
+img_width = 320
+url = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/")
+
+puts "Destroying all Offers!"
 Offer.destroy_all
+puts "Destroying all Users!"
 User.destroy_all
 
-puts "creating 20 unique users!"
+puts "Creating 20 unique users!"
 
 User.create!(username: "Carlos Yuggernaut", email: "a@a.com", password: "2309hyr", street: "Rudi Dutschke Straße 33", city: "Berlin", state: "Berlin", country: "Germany", zip: 10969)
 User.create!(username: "Emily Waters", email: "emily.waters@example.com", password: "p4ssw0rd!", street: "221B Baker Street", city: "London", state: "London", country: "UK", zip: 434342)
@@ -61,3 +68,33 @@ Offer.create!(plant_name: "Lavender", status: true, price: 4.99, plant_descripti
 Offer.create!(plant_name: "Orchid", status: true, price: 8.25, plant_description: "Exotic plant with delicate, long-lasting flowers. Requires specific care.", user: User.all.sample)
 
 puts "Finished creating #{Offer.count} very, very unique offers!"
+
+resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
+
+puts "Destroying ALL cloudinary images!"
+resources['resources'].each do |resource|
+  public_id = resource['public_id']
+  puts "Deleting #{public_id}..."
+  Cloudinary::Uploader.destroy(public_id)
+end
+
+puts "All images deleted from Cloudinary."
+puts "Attaching images to offers! (I hope)"
+Offer.all.each do |offer|
+  puts "Opening URL #{url}"
+  file = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/#{offer.plant_name.gsub(" ", "")}")
+  puts "Attaching photo to offer..."
+  offer.photo.attach(io: file, filename: "#{offer.plant_name}.jpg", content_type: "image/jpg")
+  puts "Saving offer..."
+  offer.save
+end
+
+puts "Attaching images to users! (I hope)"
+User.all.each do |user|
+  puts "Opening URL #{url}"
+  file = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/selfie")
+  puts "Attaching photo to user..."
+  user.photo.attach(io: file, filename: "#{user.username}.jpg", content_type: "image/jpg")
+  puts "Saving offer..."
+  user.save
+end
