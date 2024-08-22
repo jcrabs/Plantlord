@@ -11,6 +11,12 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    redirect_to offer_path
+  end
+
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
