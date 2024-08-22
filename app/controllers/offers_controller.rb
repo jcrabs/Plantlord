@@ -3,18 +3,13 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+    @already_booked = Booking.where(user_id: current_user.id, offer_id: @offer)
+  end
+
   def new
     @offer = Offer.new
-  end
-
-  def edit
-    @offer = Offer.find(params[:id])
-  end
-
-  def update
-    @offer = Offer.find(params[:id])
-    @offer.update(offer_params)
-    redirect_to offer_path
   end
 
   def create
@@ -25,8 +20,14 @@ class OffersController < ApplicationController
     redirect_to offer_path(@offer)
   end
 
-  def show
+  def edit
     @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    redirect_to offer_path
   end
 
   def destroy
