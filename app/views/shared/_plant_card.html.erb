@@ -7,7 +7,7 @@
     </div>
     <div class="card-footer plant-card-footer">
       <div class="d-flex justify-content-between">
-        <%= cl_image_tag offer.user.photo.key, class: "avatar-large", alt: "avatar-large", crop: :thumb, gravity: :face %>
+        <%= cl_image_tag offer.user.photo.key, class: "avatar-bordered", alt: "avatar-large", crop: :thumb, gravity: :face %>
         <%# <img src="https://icons.veryicon.com/png/o/miscellaneous/common-area-icons/default-avatar-1.png" class="avatar img-fluid" alt="User avatar" /> %>
         <h6><%= offer.user.username %></h6>
       </div>
