@@ -8,8 +8,8 @@
 
     <div class="col">
       <%= link_to "Rent", "#", class: "btn btn-flat" %>
-      <%= link_to "edit", edit_offer_path, class: "btn btn-flat-secondary" %>
       <% if user_signed_in? && current_user.id == @offer.user_id%>
+        <%= link_to "edit", edit_offer_path, class: "btn btn-flat-secondary" %>
         <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
       <% end %>
     </div>
