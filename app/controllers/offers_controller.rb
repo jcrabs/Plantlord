@@ -23,6 +23,10 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
+  def delete
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+  end
 
   private
 

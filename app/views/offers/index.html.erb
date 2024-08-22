@@ -1,17 +1,13 @@
 <h1>Plant Offers</h1>
 <div class="container">
   <div>
-    <%= link_to "", new_offer_path, class: "btn btn-plant fas fa-solid fa-seedling rounded-circle btn-circle fa-2xl p-4" %>
+    <%= link_to "", new_offer_path, class: "btn btn-plant fas fa-solid fa-plus fa-2xl" %>
   </div>
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-md-3 mb-4">
         <%= link_to offer_path(offer) do %>
-
-        
-
-          <%= render "shared/plant_card", offer: offer %>
-
+        <%= render "shared/plant_card", offer: offer %>
         <% end %>
       </div>
     <% end %>
