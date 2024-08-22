@@ -1,0 +1,28 @@
+<div class="request-card">
+  <%= link_to offer_path(request.offer) do %>
+    <div><%= cl_image_tag offer.photo.key, height: 300, width: 300 %></div>
+  <% end %>
+  <div class="request-card-infos">
+    <h2><%= offer.plant_name %></h2>
+    <p>€<%= offer.price %></p>
+  </div>
+  <div>
+    <%= cl_image_tag request.user.photo.key, class: "avatar" %>
+  </div>
+  <div class="request-card-infos">
+    <p>Requested by:</p>
+    <h2><%= request.user.username %></h2>
+  </div>
+  <div class="request-card-infos">
+    <p>Requested duration:</p>
+    <p><%= request.duration %></p>
+    <p>Comment:</p>
+    <p><%= request.comment %></p>
+  </div>
+  <% if request.status == "pending" %>
+    <div class="align-right">
+      <%= link_to "accept", accept_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-success" %>
+    </div>
+  <% end %>
+
+</div>
