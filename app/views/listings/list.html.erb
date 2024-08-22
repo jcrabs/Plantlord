@@ -37,8 +37,26 @@
   </div>
   <div class="tab-pane fade  mt-3" id="user-requests-tab-pane" role="tabpanel" aria-labelledby="user-requests-tab" tabindex="0">
     <p>Pending user requests</p>
+    <div class="container">
+      <div class="row">
+        <% @pending_requests.each do |request| %>
+          <div class="mb-4">
+            <%= render "shared/request_card", offer: request.offer, request: request %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <hr>
     <p>Accepted user requests</p>
+    <div class="container">
+      <div class="row">
+        <% @accepted_requests.each do |request| %>
+          <div class="mb-4">
+            <%= render "shared/request_card", offer: request.offer, request: request %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <hr>
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Rejected user requests
