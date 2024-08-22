@@ -1,8 +1,24 @@
-<p>edit <%= @offer.plant_name %></p>
-<%= simple_form_for(@offer) do |f| %>
-  <%= f.input :plant_name %>
-  <%= f.input :plant_description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: "btn btn-flat"%>
-<% end %>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <p class="h4 mb-3 text-center">Edit <%= @offer.plant_name %></p>
+      <%= simple_form_for(@offer, html: { class: "needs-validation" }) do |f| %>
+        <div class="mb-3">
+          <%= f.input :plant_name, input_html: { class: "form-control", placeholder: "Enter plant name" }, label_html: { class: "form-label" } %>
+        </div>
+        <div class="mb-3">
+          <%= f.input :plant_description, input_html: { class: "form-control", placeholder: "Enter plant description" }, label_html: { class: "form-label" } %>
+        </div>
+        <div class="mb-3">
+          <%= f.input :price, input_html: { class: "form-control", placeholder: "Enter price" }, label_html: { class: "form-label" } %>
+        </div>
+        <div class="mb-3">
+          <%= f.input :photo, as: :file, input_html: { class: "form-control" }, label_html: { class: "form-label" } %>
+        </div>
+        <div class="d-grid">
+          <%= f.submit "Update Offer", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
