@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   patch "offers/:offer_id/bookings/:booking_id", to:"bookings#accept", as: "accept_booking"
 
   get "/listings", to: "listings#list", as: "listings"
-  get "/subscriptions", to: "subscriptions#list", as: "subscriptions"
+  get "/subscriptions/", to: "subscriptions#list", as: "subscriptions"
 end

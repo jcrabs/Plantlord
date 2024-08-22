@@ -78,16 +78,16 @@ puts "Creating 100 bookings!"
 end
 puts "Finished creating #{Booking.count} bookings!"
 
-resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
+# resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
 
-puts "Destroying ALL cloudinary images!"
-resources['resources'].each do |resource|
-  public_id = resource['public_id']
-  puts "Deleting #{public_id}..."
-  Cloudinary::Uploader.destroy(public_id)
-end
+# puts "Destroying ALL cloudinary images!"
+# resources['resources'].each do |resource|
+#   public_id = resource['public_id']
+#   puts "Deleting #{public_id}..."
+#   Cloudinary::Uploader.destroy(public_id)
+# end
 
-puts "All images deleted from Cloudinary."
+# puts "All images deleted from Cloudinary."
 puts "Attaching images to offers! (I hope)"
 Offer.all.each do |offer|
   puts "Opening URL #{url}"
