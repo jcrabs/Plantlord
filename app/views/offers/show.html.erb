@@ -7,6 +7,9 @@
     <p><%= @offer.price %> €</p>
 
     <div class="col">
+      <% unless user_signed_in? %>
+        <%= link_to "Log in to rent this plant", new_user_session_path, class: "nav-link" %>
+      <% end %>
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked.empty? %>
         <%= link_to "Rent this plant", new_booking_path(@offer), class: "btn btn-success" %>
       <% end %>
