@@ -6,8 +6,13 @@
     <p><%= @offer.plant_description %></p>
     <p><%= @offer.price %> €</p>
 
-    <%= link_to "Rent this plant", new_booking_path(@offer), class: "btn btn-success" %>
+    <div class="col">
+      <%= link_to "Rent this plant", new_booking_path(@offer), class: "btn btn-success" %>
+      <% if user_signed_in? && current_user.id == @offer.user_id%>
+        <%= link_to "edit", edit_offer_path, class: "btn btn-flat-secondary" %>
+        <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
 
   </div>
-
 </div>
