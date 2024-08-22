@@ -1,4 +1,4 @@
-.card {
+.plant-card {
   transition: all 0.3s ease;
   box-shadow: 0 4px 18px rgba(5, 91, 38, 0.1);
   border-radius: 20px;
@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-.card:hover {
+.plant-card:hover {
   box-shadow: 0 0 30px 10px rgba(5, 91, 38, 0.5);
   background-color: #70ab6d;
   transform: translateY(-9px);
@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 
-.card-product {
+.plant-card-product {
   overflow: hidden;
   height: 600px;
   box-shadow: 0 0 5px rgba(4, 124, 48, 0.9);
@@ -26,20 +26,20 @@ a {
   border-radius: 10px;
 }
 
-.card-product img {
+.plant-card-product img {
   height: 100%;
   width: 600px;
   object-fit: cover;
 }
 
-.card-product h2 {
+.plant-card-product h2 {
   font-size: 35px;
   font-weight: bold;
   margin: 0;
   padding-bottom: 16px;
 }
 
-.card-product p {
+.plant-card-product p {
   font-size: 24px;
   line-height: 1.4;
   opacity: .7;
@@ -48,6 +48,6 @@ a {
   padding-bottom: 16px;
 }
 
-.card-product .card-product-infos {
+.plant-card-product .plant-card-product-infos {
   padding: 16px;
 }
