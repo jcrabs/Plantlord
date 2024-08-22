@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   end
   get "/offers/:offer_id/new_booking", to: "bookings#new", as: "new_booking"
   get "/listings", to: "listings#list", as: "listings"
-  get "/subscriptions", to: "subscriptions#list", as: "subscriptions"
+  get "/subscriptions/", to: "subscriptions#list", as: "subscriptions"
 end
