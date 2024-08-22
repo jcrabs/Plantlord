@@ -2,16 +2,19 @@
 
   <div style="background-image: url('<%= cl_image_path(offer.photo.key, height: 300, width: 300) %>');
   background-size: cover; height: 300px" >
+    <div class='card-buttons'>
+      <%= link_to "Edit", '#', class: "btn btn-flat-secondary-small" %>
+      <%= link_to "Delete", '#', data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-delete-small" %>
+    </div>
   </div>
     <div class="card-body d-flex flex-column justify-content-between">
       <h5 class="card-title"><strong><%= offer.plant_name %></strong></h5>
       <p class="card-text"><%= offer.plant_description %></p>
       <h6 class="card-price">€<strong><%= offer.price %></strong></h6>
     </div>
-    <div class="card-footer plant-card-footer">
+    <div class="card-footer">
       <div class="d-flex justify-content-between">
-        <%= cl_image_tag offer.user.photo.key, class: "avatar-bordered", alt: "avatar-large", crop: :thumb, gravity: :face %>
-        <%# <img src="https://icons.veryicon.com/png/o/miscellaneous/common-area-icons/default-avatar-1.png" class="avatar img-fluid" alt="User avatar" /> %>
+        <img src="https://icons.veryicon.com/png/o/miscellaneous/common-area-icons/default-avatar-1.png" class="avatar img-fluid" alt="User avatar" />
         <h6><%= offer.user.username %></h6>
       </div>
     </div>
