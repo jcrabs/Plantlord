@@ -7,6 +7,7 @@
     <p><%= @offer.price %> €</p>
     <div class="col">
       <%= link_to "Rent", "#", class: "btn btn-success" %>
+      <%= link_to "Edit", "#", class: "btn btn-flat-secondary" %>
       <% if user_signed_in? && current_user.id == @offer.user_id%>
         <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
       <% end %>
