@@ -1,6 +1,10 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.global_search(params[:query])
+    else
+      @offers = Offer.all
+    end
   end
 
   def show

@@ -18,14 +18,19 @@
           <li class="nav-item">
             <%= link_to "Create listing", new_offer_path, class: "nav-link" %>
           </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Create listing", new_user_session_path, class: "nav-link" %>
+          </li>
         <% end %>
       </ul>
 
       <div class="d-flex search-and-avatar">
-        <form class="d-flex justify-content-center" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+        <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-outline-success" %>
+        <% end %>
 
         <ul class="navbar-nav">
           <% if user_signed_in? %>
@@ -35,10 +40,15 @@
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
               </div>
             </li>
+            <div>
+              <%= link_to "", new_offer_path, class: "btn btn-plant fas fa-solid fa-plus fa-2xl" %>
+            </div>
           <% else %>
             <div class="d-flex justify-content-evenly">
               <%= link_to "Register", new_user_registration_path, class: "btn btn-secondary" %>
               <%= link_to "Log in", new_user_session_path, class: "ms-1 btn btn-secondary" %>
+              <%= link_to "", new_user_session_path, class: "btn btn-plant fas fa-solid fa-plus fa-2xl" %>
+
             </div>
           <% end %>
         </ul>
