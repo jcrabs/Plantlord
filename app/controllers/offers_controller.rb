@@ -11,7 +11,7 @@ class OffersController < ApplicationController
     @booking = Booking.new
     @offer = Offer.find(params[:id])
     if user_signed_in?
-      @already_booked = Booking.where(user_id: current_user.id, offer_id: @offer)
+      @already_booked = Booking.where(user_id: current_user.id, offer_id: @offer, status: "accepted")
     end
   end
 
