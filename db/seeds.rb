@@ -99,11 +99,11 @@ Offer.all.each do |offer|
 end
 puts "Finished attaching actual real plant images to offers!"
 
-puts "Creating 100 bookings!"
-100.times do
-  Booking.create!(user: User.all.sample, offer: Offer.all.sample, status: booking_status.sample, comment:"This is a comment.", duration:"#{rand(60)} days.")
-end
-puts "Finished creating #{Booking.count} bookings!"
+# puts "Creating 100 bookings!"
+# 100.times do
+#   Booking.create!(user: User.all.sample, offer: Offer.all.sample, status: booking_status.sample, comment:"This is a comment.", duration:"#{rand(60)} days.")
+# end
+# puts "Finished creating #{Booking.count} bookings!"
 
 # puts "Attaching images to offers! (I hope)"
 # Offer.all.each do |offer|
