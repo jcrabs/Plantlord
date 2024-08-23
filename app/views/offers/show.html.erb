@@ -7,14 +7,14 @@
 
     <div class="mt-3">
       <% unless user_signed_in? %>
-        <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-success" %>
+        <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-flat" %>
       <% end %>
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked %>
         <p>You are currently renting this plant!</p>
       <% end %>
 
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked.empty? %>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#rentPlantModal">
+        <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#rentPlantModal">
           Rent this plant
         </button>
 
@@ -29,7 +29,7 @@
                 <%= simple_form_for([@offer, @booking], url: new_booking_path(@offer)) do |f| %>
                   <%= f.input :comment %>
                   <%= f.input :duration, as: :integer, label: "Duration", input_html: { min: 1, step: 1, placeholder: "Enter duration in months" } %>
-                  <%= f.button :submit, 'Rent this plant', class: 'btn btn-success' %>
+                  <%= f.button :submit, 'Rent this plant', class: 'btn btn-flat' %>
                 <% end %>
               </div>
               <div class="modal-footer">
@@ -41,7 +41,7 @@
       <% end %>
       <% if user_signed_in? && current_user.id == @offer.user_id %>
         <%= link_to "Edit", edit_offer_path(@offer), class: "btn btn-flat-secondary" %>
-        <%= link_to "Delete", offer_path(@offer), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= link_to "Delete", offer_path(@offer), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-flat-secondary-danger" %>
       <% end %>
 
     </div>
