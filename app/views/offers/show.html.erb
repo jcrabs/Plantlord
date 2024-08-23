@@ -9,7 +9,7 @@
       <% unless user_signed_in? %>
         <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-flat" %>
       <% end %>
-      <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked %>
+      <% if user_signed_in? && current_user.id != @offer.user_id && !@already_booked.empty? %>
         <p>You are currently renting this plant!</p>
       <% end %>
 
