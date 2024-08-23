@@ -47,6 +47,19 @@ User.create!(username: "Emily Wilson", email: "emily.wilson@example.au", passwor
 
 puts "Finished creating #{User.count} users!"
 
+puts "Attaching cat images to users!"
+resources = Cloudinary::Api.resources(type: 'upload', max_results: 20)
+cloudinary_url = "https://res.cloudinary.com/dnd9g94xw/image/upload/"
+
+  if resources['resources'].empty?
+    puts "No images found in the folder."
+  else
+    User.all.each_with_index do |user, index|
+      user.photo.attach(io: URI.open("https://res.cloudinary.com/dnd9g94xw/image/upload/#{resources['resources'][index]['public_id']}"), filename: "#{resources['resources'][index]['public_id']}.jpg", content_type: "image/jpeg")
+    end
+end
+puts "Finished attaching cat images to users!"
+
 puts "Creating 20 very unique Offers!"
 
 Offer.create!(plant_name: "Monstera", status: true, price: 7.89, plant_description: "Large, heart-shaped leaves with natural holes. Thrives in bright, indirect light.", user: User.all.sample)
@@ -78,16 +91,17 @@ puts "Creating 100 bookings!"
 end
 puts "Finished creating #{Booking.count} bookings!"
 
-# resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
+# This code deletes all images stored on Cloudinary
 
+# resources = Cloudinary::Api.resources(max_results: 500) # adjust max_results if needed
 # puts "Destroying ALL cloudinary images!"
 # resources['resources'].each do |resource|
 #   public_id = resource['public_id']
 #   puts "Deleting #{public_id}..."
 #   Cloudinary::Uploader.destroy(public_id)
 # end
-
 # puts "All images deleted from Cloudinary."
+
 puts "Attaching images to offers! (I hope)"
 Offer.all.each do |offer|
   puts "Opening URL #{url}"
@@ -98,12 +112,14 @@ Offer.all.each do |offer|
   offer.save
 end
 
-puts "Attaching images to users! (I hope)"
-User.all.each do |user|
-  puts "Opening URL #{url}"
-  file = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/selfie")
-  puts "Attaching photo to user..."
-  user.photo.attach(io: file, filename: "#{user.username}.jpg", content_type: "image/jpg")
-  puts "Saving offer..."
-  user.save
-end
+# Use this bit to attach loremflickr selfies to users
+
+# puts "Attaching images to users! (I hope)"
+# User.all.each do |user|
+#   puts "Opening URL #{url}"
+#   file = URI.open("https://loremflickr.com/#{img_width}/#{img_height}/selfie")
+#   puts "Attaching photo to user..."
+#   user.photo.attach(io: file, filename: "#{user.username}.jpg", content_type: "image/jpg")
+#   puts "Saving offer..."
+#   user.save
+# end
