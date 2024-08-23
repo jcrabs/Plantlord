@@ -9,6 +9,10 @@
       <% unless user_signed_in? %>
         <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-success" %>
       <% end %>
+      <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked %>
+        <p>You are currently renting this plant!</p>
+      <% end %>
+
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked.empty? %>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#rentPlantModal">
           Rent this plant
