@@ -9,23 +9,21 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="<%= "#{params[:active_tab]=='accepted-requests' || params[:active_tab]=='rejected-requests' ? '' : 'active show' }" %> tab-pane fade show mt-3" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
-    <p>Active listings</p>
+    <p>Available listings</p>
     <div class="container">
       <div class="row">
-        <% @active_offers.each do |offer| %>
+        <% @available_offers.each do |offer| %>
           <div class="col-md-3 mb-4">
-            <%# <%= link_to offer_path(offer) do %>
-              <%= render "shared/plant_card_listings", offer: offer %>
-            <%# <% end %>
+            <%= render "shared/plant_card_listings", offer: offer %>
           </div>
         <% end %>
       </div>
     </div>
     <hr>
-    <p>Past listings</p>
+    <p>Rented listings</p>
     <div class="container">
       <div class="row">
-        <% @past_offers.each do |offer| %>
+        <% @rented_offers.each do |offer| %>
           <div class="col-md-3 mb-4">
             <%= link_to offer_path(offer) do %>
               <%= render "shared/plant_card", offer: offer %>

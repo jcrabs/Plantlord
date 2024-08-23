@@ -20,6 +20,8 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: "accepted")
+    @offer = @booking.offer
+    @offer.update(status: false)
     redirect_to listings_path(active_tab: "accepted-requests")
   end
 
