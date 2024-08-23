@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     post "/:id", to: "bookings#create"
   end
   get "/offers/:offer_id/new_booking", to: "bookings#new", as: "new_booking"
-  patch "offers/:offer_id/bookings/:booking_id", to:"bookings#accept", as: "accept_booking"
-  patch "offers/:offer_id/bookings/:booking_id", to:"bookings#reject", as: "reject_booking"
+  patch "bookings/:booking_id/accept", to:"bookings#accept", as: "accept_booking"
+  patch "bookings/:booking_id/reject", to:"bookings#reject", as: "reject_booking"
 
   get "/listings", to: "listings#list", as: "listings"
   get "/subscriptions/", to: "subscriptions#list", as: "subscriptions"

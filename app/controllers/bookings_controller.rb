@@ -20,12 +20,13 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: "accepted")
-    redirect_to listings_path(active_tab: "incoming-requests")
+    redirect_to listings_path(active_tab: "accepted-requests")
   end
 
-  def Rejected
+  def reject
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: "rejected")
+    redirect_to listings_path(active_tab: "rejected-requests")
   end
 
   private

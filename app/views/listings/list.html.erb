@@ -1,14 +1,14 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link <%= "#{params[:active_tab]=='incoming-requests' ? '' : 'active' }" %>" id="listings-tab" data-bs-toggle="tab" data-bs-target="#listings-tab-pane" type="button" role="tab" aria-controls="listings-tab-pane" aria-selected="true">My listings</button>
+    <button class="nav-link <%= "#{params[:active_tab]=='accepted-requests' || params[:active_tab]=='rejected-requests' ? '' : 'active' }" %>" id="listings-tab" data-bs-toggle="tab" data-bs-target="#listings-tab-pane" type="button" role="tab" aria-controls="listings-tab-pane" aria-selected="true">My listings</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link <%= "#{params[:active_tab]=='incoming-requests' ? 'active' : '' }" %>" id="user-requests-tab" data-bs-toggle="tab" data-bs-target="#user-requests-tab-pane" type="button" role="tab" aria-controls="user-requests-tab-pane" aria-selected="false">Incoming requests</button>
+    <button class="nav-link <%= "#{params[:active_tab]=='accepted-requests' || params[:active_tab]=='rejected-requests' ? 'active' : '' }" %>" id="user-requests-tab" data-bs-toggle="tab" data-bs-target="#user-requests-tab-pane" type="button" role="tab" aria-controls="user-requests-tab-pane" aria-selected="false">Incoming requests</button>
   </li>
 </ul>
 
 <div class="tab-content" id="myTabContent">
-  <div class="<%= "#{params[:active_tab]=='incoming-requests' ? '' : 'active show' }" %> tab-pane fade show mt-3" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
+  <div class="<%= "#{params[:active_tab]=='accepted-requests' || params[:active_tab]=='rejected-requests' ? '' : 'active show' }" %> tab-pane fade show mt-3" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
     <p>Active listings</p>
     <div class="container">
       <div class="row">
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="<%= "#{params[:active_tab]=='incoming-requests' ? 'active show' : '' }" %> tab-pane fade mt-3" id="user-requests-tab-pane" role="tabpanel" aria-labelledby="user-requests-tab" tabindex="0">
+  <div class="<%= "#{params[:active_tab]=='accepted-requests' || params[:active_tab]=='rejected-requests' ? 'active show' : '' }" %> tab-pane fade mt-3" id="user-requests-tab-pane" role="tabpanel" aria-labelledby="user-requests-tab" tabindex="0">
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pending-requests" aria-expanded="true" aria-controls="accepted-requests">
       Pending user requests
     </button>
@@ -62,7 +62,7 @@
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#accepted-requests" aria-expanded="<%= "#{params[:active_tab]=='incoming-requests' ? 'true' : 'false' }" %>" aria-controls="accepted-requests">
       Accepted user requests
     </button>
-    <div class="collapse <%= "#{params[:active_tab]=='incoming-requests' ? 'show' : '' }" %>" id="accepted-requests">
+    <div class="collapse <%= "#{params[:active_tab]=='accepted-requests' ? 'show' : '' }" %>" id="accepted-requests">
       <div class="card card-body">
         <div class="container">
           <div class="row">
@@ -79,7 +79,7 @@
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rejected-requests" aria-expanded="false" aria-controls="rejected-requests">
       Rejected user requests
     </button>
-    <div class="collapse" id="rejected-requests">
+    <div class="collapse <%= "#{params[:active_tab]=='rejected-requests' ? 'show' : '' }" %>" id="rejected-requests">
       <div class="card card-body">
         <div class="container">
           <div class="row">
