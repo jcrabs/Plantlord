@@ -21,7 +21,8 @@
   </div>
   <% if request.status == "pending" %>
     <div class="align-right">
-      <%= link_to "accept", accept_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-success" %>
+      <%= link_to "accept", accept_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-success mb-2" %>
+      <%= link_to "reject", reject_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-danger" %>
     </div>
   <% end %>
 
