@@ -2,7 +2,7 @@
   <%= link_to offer_path(request.offer) do %>
     <div><%= cl_image_tag offer.photo.key, height: 300, width: 300 %></div>
   <% end %>
-  <div class="request-card-infos">
+  <div class="request-card-infos col-2">
     <h2><%= offer.plant_name %></h2>
     <p>€<%= offer.price %></p>
   </div>
@@ -21,8 +21,10 @@
   </div>
   <% if request.status == "pending" %>
     <div class="align-right">
-      <%= link_to "accept", accept_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-success mb-2" %>
-      <%= link_to "reject", reject_booking_path(offer_id: offer.id, booking_id: request.id), data: { turbo_method: :patch}, class: "btn btn-danger" %>
+      <div class="d-grid gap-1">
+        <%= link_to "accept", accept_booking_path(booking_id: request.id), data: { turbo_method: :patch }, class: "btn btn-success mb-2" %>
+        <%= link_to "reject", reject_booking_path(booking_id: request.id), data: { turbo_method: :patch }, class: "btn btn-danger" %>
+      </div>
     </div>
   <% end %>
 
