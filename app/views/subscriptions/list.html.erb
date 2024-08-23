@@ -19,6 +19,7 @@
             <% end %>
           </div>
         <% end %>
+
       </div>
     </div>
     <hr>
@@ -39,7 +40,7 @@
     <p>Pending requests</p>
     <div class="container">
       <div class="row">
-        <% @pending_subscriptions.each do |subscription| %>
+        <% @pending_subscriptions.reverse_each do |subscription| %>
           <div class="col-md-3 mb-4">
             <%= link_to offer_path(subscription.offer_id) do %>
               <%= render "shared/plant_card", offer: Offer.where(id: subscription.offer_id)[0] %>
@@ -54,7 +55,17 @@
     </button>
     <div class="collapse" id="collapseAccepted">
       <div class="card card-body">
-        [placeholder]
+        <div class="container">
+          <div class="row">
+            <% @accepted_subscriptions.reverse_each do |subscription| %>
+              <div class="col-md-3 mb-4">
+                <%= link_to offer_path(subscription.offer_id) do %>
+                  <%= render "shared/plant_card", offer: Offer.where(id: subscription.offer_id)[0] %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <hr>
@@ -63,7 +74,17 @@
     </button>
     <div class="collapse" id="collapseRejected">
       <div class="card card-body">
-        [placeholder]
+        <div class="container">
+          <div class="row">
+            <% @rejected_subscriptions.reverse_each do |subscription| %>
+              <div class="col-md-3 mb-4">
+                <%= link_to offer_path(subscription.offer_id) do %>
+                  <%= render "shared/plant_card", offer: Offer.where(id: subscription.offer_id)[0] %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

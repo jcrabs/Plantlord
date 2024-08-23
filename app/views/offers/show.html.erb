@@ -3,12 +3,16 @@
   <div class="plant-card-product-infos card-product-infos">
     <h2><%= @offer.plant_name %></h2>
     <p><%= @offer.plant_description %></p>
-    <p><%= @offer.price %> €</p>
+    <p><%= @offer.price %> € / ᴍonth</p>
 
     <div class="mt-3">
       <% unless user_signed_in? %>
         <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-flat" %>
       <% end %>
+      <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked %>
+        <p>You are currently renting this plant!</p>
+      <% end %>
+
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked.empty? %>
         <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#rentPlantModal">
           Rent this plant
@@ -24,7 +28,7 @@
               <div class="modal-body">
                 <%= simple_form_for([@offer, @booking], url: new_booking_path(@offer)) do |f| %>
                   <%= f.input :comment %>
-                  <%= f.input :duration %>
+                  <%= f.input :duration, as: :integer, label: "Duration", input_html: { min: 1, step: 1, placeholder: "Enter duration in months" } %>
                   <%= f.button :submit, 'Rent this plant', class: 'btn btn-flat' %>
                 <% end %>
               </div>
