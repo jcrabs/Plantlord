@@ -14,9 +14,9 @@
       <div class="row">
         <% @active_offers.each do |offer| %>
           <div class="col-md-3 mb-4">
-            <%= link_to offer_path(offer) do %>
+            <%# <%= link_to offer_path(offer) do %>
               <%= render "shared/plant_card_listings", offer: offer %>
-            <% end %>
+            <%# <% end %>
           </div>
         <% end %>
       </div>
