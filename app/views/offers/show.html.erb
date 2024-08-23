@@ -1,4 +1,3 @@
-
 <div class="plant-card-product card-product">
   <%= cl_image_tag @offer.photo.key, height: 300, width: 300 %>
   <div class="plant-card-product-infos card-product-infos">
@@ -11,15 +10,36 @@
         <%= link_to "Log in to rent this plant", new_user_session_path, class: "btn btn-success" %>
       <% end %>
       <% if user_signed_in? && current_user.id != @offer.user_id && @already_booked.empty? %>
-        <%= link_to "Rent this plant", new_booking_path(@offer), class: "btn btn-success" %>
-      <% end %>
-      <% if user_signed_in? && current_user.id == @offer.user_id%>
-        <%= link_to "Edit", edit_offer_path, class: "btn btn-flat-secondary" %>
-        <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-      <% end %>
+        
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#rentPlantModal">
+          Rent this plant
+        </button>
 
-
+        <div class="modal fade" id="rentPlantModal" tabindex="-1" aria-labelledby="rentPlantModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="rentPlantModalLabel">Rent this plant</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for([@offer, @booking], url: new_booking_path(@offer)) do |f| %>
+                  <%= f.input :comment %>
+                  <%= f.input :duration %>
+                  <%= f.button :submit, 'Rent this plant', class: 'btn btn-success' %>
+                <% end %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if user_signed_in? && current_user.id == @offer.user_id %>
+        <%= link_to "Edit", edit_offer_path(@offer), class: "btn btn-flat-secondary" %>
+        <%= link_to "Delete", offer_path(@offer), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% end %>
     </div>
-
   </div>
 </div>
