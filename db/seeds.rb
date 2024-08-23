@@ -24,32 +24,32 @@ User.destroy_all
 
 puts "Creating 20 unique users!"
 
-User.create!(username: "Carlos Yuggernaut", email: "a@a.com", password: "2309hyr", street: "Rudi Dutschke Straße 33", city: "Berlin", state: "Berlin", country: "Germany", zip: 10969)
-User.create!(username: "Emily Waters", email: "emily.waters@example.com", password: "p4ssw0rd!", street: "221B Baker Street", city: "London", state: "London", country: "UK", zip: 434342)
-User.create!(username: "Kenji Sato", email: "kenji.sato@example.jp", password: "sato1234", street: "1 Chome-1-2 Oshiage", city: "Sumida", state: "Tokyo", country: "Japan", zip: 1310045)
-User.create!(username: "Maria Sanchez", email: "maria.s@example.es", password: "123456", street: "Calle de Alcalá 45", city: "Madrid", state: "Madrid", country: "Spain", zip: 28014)
-User.create!(username: "John Doe", email: "jdoe@example.com", password: "doe98765", street: "1600 Pennsylvania Avenue NW", city: "Washington", state: "DC", country: "USA", zip: 20500)
-User.create!(username: "Isabella Rossi", email: "isabella.rossi@example.it", password: "rossi890", street: "Via del Corso 501", city: "Rome", state: "Lazio", country: "Italy", zip: 033201)
-User.create!(username: "Pierre Dubois", email: "pierre.dubois@example.fr", password: "bonjour123", street: "10 Avenue des Champs-Élysées", city: "Paris", state: "Île-de-France", country: "France", zip: 75008)
-User.create!(username: "Lara Croft", email: "lcroft@example.com", password: "t0mbRaider", street: "123 Raider Street", city: "London", state: "Greater London", country: "UK", zip: 53344)
-User.create!(username: "Ankit Patel", email: "ankit.patel@example.in", password: "ankitP@tel2021", street: "MG Road", city: "Mumbai", state: "Maharashtra", country: "India", zip: 400001)
-User.create!(username: "Olga Ivanova", email: "olga.ivanova@example.ru", password: "rus0lga", street: "Tverskaya Street 10", city: "Moscow", state: "Moscow", country: "Russia", zip: 125009)
-User.create!(username: "Li Wei", email: "li.wei@example.cn", password: "l1we1ch1na", street: "1 Tiananmen East Road", city: "Beijing", state: "Beijing", country: "China", zip: 100000)
-User.create!(username: "Sophia Smith", email: "sophia.smith@example.ca", password: "sm1thS0phia", street: "100 Queen Street", city: "Toronto", state: "Ontario", country: "Canada", zip: 3423)
-User.create!(username: "Ahmed Al-Farsi", email: "ahmed.farsi@example.ae", password: "ahmed@2021", street: "Sheikh Zayed Road", city: "Dubai", state: "Dubai", country: "UAE", zip: 00000)
-User.create!(username: "Marta Nowak", email: "marta.nowak@example.pl", password: "poland2022", street: "Nowy Świat 15", city: "Warsaw", state: "Mazowieckie", country: "Poland", zip: 00372)
-User.create!(username: "Hassan Ali", email: "hassan.ali@example.pk", password: "aliHassan", street: "Mall Road", city: "Lahore", state: "Punjab", country: "Pakistan", zip: 54000)
-User.create!(username: "Anna Müller", email: "anna.mueller@example.de", password: "g3rmany123", street: "Marienplatz 1", city: "Munich", state: "Bavaria", country: "Germany", zip: 80331)
-User.create!(username: "Carlos Diaz", email: "carlos.diaz@example.mx", password: "diazC2023", street: "Paseo de la Reforma 100", city: "Mexico City", state: "CDMX", country: "Mexico", zip: 06600)
-User.create!(username: "Yasmine El-Sayed", email: "yasmine.sayed@example.eg", password: "y@smin3l", street: "Al Tahrir Square", city: "Cairo", state: "Cairo", country: "Egypt", zip: 11511)
-User.create!(username: "Lucas Silva", email: "lucas.silva@example.br", password: "lucasS!lva", street: "Avenida Paulista 900", city: "São Paulo", state: "São Paulo", country: "Brazil", zip: 01310100)
-User.create!(username: "Emily Wilson", email: "emily.wilson@example.au", password: "wilsonEmi@", street: "1 Macquarie Street", city: "Sydney", state: "NSW", country: "Australia", zip: 2000)
+User.create!(username: "Carlos Yuggernaut", email: "a@a.com", password: "password", street: "Rudi Dutschke Straße 33", city: "Berlin", state: "Berlin", country: "Germany", zip: 10969)
+User.create!(username: "Emily Waters", email: "emily.waters@example.com", password: "password", street: "221B Baker Street", city: "London", state: "London", country: "UK", zip: 434342)
+User.create!(username: "Kenji Sato", email: "kenji.sato@example.jp", password: "password", street: "1 Chome-1-2 Oshiage", city: "Sumida", state: "Tokyo", country: "Japan", zip: 1310045)
+User.create!(username: "Maria Sanchez", email: "maria.s@example.es", password: "password", street: "Calle de Alcalá 45", city: "Madrid", state: "Madrid", country: "Spain", zip: 28014)
+User.create!(username: "John Doe", email: "jdoe@example.com", password: "password", street: "1600 Pennsylvania Avenue NW", city: "Washington", state: "DC", country: "USA", zip: 20500)
+User.create!(username: "Isabella Rossi", email: "isabella.rossi@example.it", password: "password", street: "Via del Corso 501", city: "Rome", state: "Lazio", country: "Italy", zip: 033201)
+User.create!(username: "Pierre Dubois", email: "pierre.dubois@example.fr", password: "password", street: "10 Avenue des Champs-Élysées", city: "Paris", state: "Île-de-France", country: "France", zip: 75008)
+User.create!(username: "Lara Croft", email: "lcroft@example.com", password: "password", street: "123 Raider Street", city: "London", state: "Greater London", country: "UK", zip: 53344)
+User.create!(username: "Ankit Patel", email: "ankit.patel@example.in", password: "password", street: "MG Road", city: "Mumbai", state: "Maharashtra", country: "India", zip: 400001)
+User.create!(username: "Olga Ivanova", email: "olga.ivanova@example.ru", password: "password", street: "Tverskaya Street 10", city: "Moscow", state: "Moscow", country: "Russia", zip: 125009)
+User.create!(username: "Li Wei", email: "li.wei@example.cn", password: "password", street: "1 Tiananmen East Road", city: "Beijing", state: "Beijing", country: "China", zip: 100000)
+User.create!(username: "Sophia Smith", email: "sophia.smith@example.ca", password: "password", street: "100 Queen Street", city: "Toronto", state: "Ontario", country: "Canada", zip: 3423)
+User.create!(username: "Ahmed Al-Farsi", email: "ahmed.farsi@example.ae", password: "password", street: "Sheikh Zayed Road", city: "Dubai", state: "Dubai", country: "UAE", zip: 00000)
+User.create!(username: "Marta Nowak", email: "marta.nowak@example.pl", password: "password", street: "Nowy Świat 15", city: "Warsaw", state: "Mazowieckie", country: "Poland", zip: 00372)
+User.create!(username: "Hassan Ali", email: "hassan.ali@example.pk", password: "password", street: "Mall Road", city: "Lahore", state: "Punjab", country: "Pakistan", zip: 54000)
+User.create!(username: "Anna Müller", email: "anna.mueller@example.de", password: "password", street: "Marienplatz 1", city: "Munich", state: "Bavaria", country: "Germany", zip: 80331)
+User.create!(username: "Carlos Diaz", email: "carlos.diaz@example.mx", password: "password", street: "Paseo de la Reforma 100", city: "Mexico City", state: "CDMX", country: "Mexico", zip: 06600)
+User.create!(username: "Yasmine El-Sayed", email: "yasmine.sayed@example.eg", password: "password", street: "Al Tahrir Square", city: "Cairo", state: "Cairo", country: "Egypt", zip: 11511)
+User.create!(username: "Lucas Silva", email: "lucas.silva@example.br", password: "password", street: "Avenida Paulista 900", city: "São Paulo", state: "São Paulo", country: "Brazil", zip: 01310100)
+User.create!(username: "Emily Wilson", email: "emily.wilson@example.au", password: "password", street: "1 Macquarie Street", city: "Sydney", state: "NSW", country: "Australia", zip: 2000)
 
 puts "Finished creating #{User.count} users!"
 
 puts "Attaching cat images to users!"
-resources = Cloudinary::Api.resources(type: 'upload', max_results: 20)
-cloudinary_url = "https://res.cloudinary.com/dnd9g94xw/image/upload/"
+resources = Cloudinary::Api.resources(prefix: 'cats', type: 'upload', max_results: 20)
+# cloudinary_url = "https://res.cloudinary.com/dnd9g94xw/image/upload/"
 
   if resources['resources'].empty?
     puts "No images found in the folder."
