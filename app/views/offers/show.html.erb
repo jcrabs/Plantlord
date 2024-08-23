@@ -1,6 +1,4 @@
 <div class="plant-card-product card-product position-relative">
-  <%= link_to "⬅ Back", offers_path, class: "top-btn btn btn-link btn-sm position-absolute top-0 end-0 mt-2 me-5" %>
-
   <%= cl_image_tag @offer.photo.key, height: 300, width: 300 %>
   <div class="plant-card-product-infos card-product-infos">
     <h2><%= @offer.plant_name %></h2>

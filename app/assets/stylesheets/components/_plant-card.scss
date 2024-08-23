@@ -1,6 +1,6 @@
 .plant-card {
   transition: all 0.3s ease;
-  box-shadow: 3px 3px 10px 10px #00000000;
+  box-shadow: 3px 3px 10px 10px #9f1f1f00;
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
@@ -9,8 +9,8 @@
 }
 
 .plant-card:hover {
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
-  background-color: #dbffd3;
+  box-shadow: 0 0 20px 10px rgba(32, 85, 35, 0.3);
+  background-color: #c4eabb;
   transform: translateY(-9px);
 }
 
