@@ -40,14 +40,10 @@
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
               </div>
             </li>
-            <div>
-              <%= link_to "", new_offer_path, class: "btn btn-plant fas fa-solid fa-plus fa-2xl" %>
-            </div>
-          <% else %>
+            <% else %>
             <div class="d-flex justify-content-evenly">
               <%= link_to "Register", new_user_registration_path, class: "btn btn-secondary" %>
               <%= link_to "Log in", new_user_session_path, class: "ms-1 btn btn-secondary" %>
-              <%= link_to "", new_user_session_path, class: "btn btn-plant fas fa-solid fa-plus fa-2xl" %>
 
             </div>
           <% end %>
