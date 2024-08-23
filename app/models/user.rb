@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
-  validates :username, presence: true, uniqueness: true
-  validates :street, :city, :state, :country, :zip, presence: true
+  # validates :username, presence: true, uniqueness: true
+  # validates :street, :city, :state, :country, :zip, presence: true
 end
