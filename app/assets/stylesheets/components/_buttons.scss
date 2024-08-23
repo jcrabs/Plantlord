@@ -2,7 +2,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #31df06;
+  background: #43c000;
   transition: background 0.3s ease;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .btn-flat-secondary {
-  color: #31df06;
+  color: #777777;
   padding: 8px 24px;
   border-radius: 20px;
   background: white;
@@ -22,6 +22,19 @@
 .btn-flat-secondary:hover {
   background: #dbffd3;
   color: #2c8f0d;
+}
+
+.btn-flat-secondary-danger {
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background: rgb(201, 15, 15);
+  transition: background 0.3s ease;
+}
+
+.btn-flat-secondary-danger:hover {
+  background: #e90f0f;
+  color: #fcfcfc;
 }
 
 .card-buttons {
@@ -40,22 +53,22 @@
 }
 
 .btn-flat-secondary-small {
-  color: #31df06;
+  color: #43c000;
   padding: 2px 8px;
   border-radius: 20px;
   text-align: center; margin: auto;
   font-size: 13px;
   background: white;
   vertical-align: middle;
-  border: 1px solid #31df06;
+  border: 1px solid #ffffff;
   box-sizing: border-box;
   transition: background 0.3s ease;
 }
 
 .btn-flat-secondary-small:hover {
   background: #dbffd3;
-  color:#2c8f0d;
-  border:1px solid #2c8f0d;
+  color:#43c000;
+  border:1px solid #ffffff;
 }
 
 .btn-delete-small {

@@ -29,7 +29,7 @@
 
         <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
-        <%= submit_tag "Search", name: "", class: "btn btn-outline-success" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-flat-secondary" %>
         <% end %>
 
         <ul class="navbar-nav">
