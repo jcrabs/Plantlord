@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   get "/offers/:offer_id/new_booking", to: "bookings#new", as: "new_booking"
   patch "offers/:offer_id/bookings/:booking_id", to:"bookings#accept", as: "accept_booking"
+  patch "offers/:offer_id/bookings/:booking_id", to:"bookings#reject", as: "reject_booking"
 
   get "/listings", to: "listings#list", as: "listings"
   get "/subscriptions/", to: "subscriptions#list", as: "subscriptions"
