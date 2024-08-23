@@ -4,8 +4,8 @@
   <div style="background-image: url('<%= cl_image_path(offer.photo.key, height: 300, width: 300) %>');
   background-size: cover; height: 300px" >
     <div class='card-buttons'>
-      <%= link_to "Edit", '#', class: "btn btn-flat-secondary-small" %>
-      <%= link_to "Delete", '#', data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-delete-small" %>
+      <%= link_to "Edit", edit_offer_path(offer), class: "btn btn-flat-secondary-small" %>
+      <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-delete-small" %>
     </div>
   </div>
     <div class="card-body plant-card-body d-flex flex-column justify-content-between">
